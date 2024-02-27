@@ -10,16 +10,41 @@ require_once './main.php';
   <title>hotel db</title>
 </head>
 <body>
-  <ul>
+
+
+  <form  method='GET'>
+    <input type="checkbox" name="check_parking" id="check_parking" <?php if($filter_parking) echo 'checked' ?>>
+    <label for="check_parking">parking yes</label> <br>
+
+    <input type='number' name="vote" id="vote" min="1" max="5">
+    <label for="vote">filter by vote</label><br>
+
+    <button type="submit">filter</button>
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <table border='1px'>
+    <thead>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>PARKING</th>
+      <th>VOTE</th>
+      <th>DISTANCE TO CENTER</th>
+    </thead>
     <?php foreach($hotels as $hotel): ?>
-      <li>
-        <?= $hotel['name'] ?>
-        <?= $hotel['description'] ?>
-        <?= $hotel['parking'] ?>
-        <?= $hotel['vote'] ?>
-        <?= $hotel['distance_to_center'] ?>
-      </li>
-      <?php endforeach; ?>
-  </ul>
+    <tbody>
+      <tr>
+        <td><?= $hotel['name'] ?></td>
+        <td><?= $hotel['description'] ?></td>
+        <td><?= $hotel['parking'] ? 'yes': 'no' ?></td>
+        <td><?= $hotel['vote'] ?></td>
+        <td><?= $hotel['distance_to_center'] ?></td>
+      </tr>
+    </tbody>
+    <?php endforeach; ?>
+  </table>
+  
 </body>
 </html>

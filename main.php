@@ -41,6 +41,11 @@
 
 
 
+  $filter_parking = $_GET['check_parking'] ?? '';
+  $filter_vote = $_GET['vote'] ?? '';
 
-  
+  if($filter_parking) $hotels=array_filter($hotels, fn($hotel) => $hotel['parking']);
+
+
+
 ?>
