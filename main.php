@@ -45,6 +45,7 @@
   $filter_vote = $_GET['vote'] ?? '';
 
   if($filter_parking) $hotels=array_filter($hotels, fn($hotel) => $hotel['parking']);
+  if($filter_vote) $hotels=array_filter($hotels, fn($hotel) => $hotel['vote']>=$filter_vote);
 
 
 

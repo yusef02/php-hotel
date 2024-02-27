@@ -16,7 +16,7 @@ require_once './main.php';
     <input type="checkbox" name="check_parking" id="check_parking" <?php if($filter_parking) echo 'checked' ?>>
     <label for="check_parking">parking yes</label> <br>
 
-    <input type='number' name="vote" id="vote" min="1" max="5">
+    <input type='number' name="vote" id="vote" value='<?=$filter_vote?>' min="1" max="5">
     <label for="vote">filter by vote</label><br>
 
     <button type="submit">filter</button>
